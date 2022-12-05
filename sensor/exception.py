@@ -1,5 +1,10 @@
-#Inheriting Exception for our custom Sendor Exception
-import sys,os
+'''
+Custom Exception File:
+This exception file is made by inheriting parent exception class.
+'''
+import sys
+import os
+
 
 def error_message_detail(error, error_detail: sys):
     _, _, exc_tb = error_detail.exc_info()
@@ -10,9 +15,8 @@ def error_message_detail(error, error_detail: sys):
     return error_message
 
 
-
+#Inheriting Exception for our custom Sendor Exception
 class SensorException(Exception):
-
     def __init__(self,error_message, error_detail:sys):
         self.error_message = error_message_detail(
             error_message, error_detail=error_detail)

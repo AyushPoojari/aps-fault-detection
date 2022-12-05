@@ -1,3 +1,7 @@
+'''
+Loading data to MongoDB
+'''
+
 import pymongo
 import pandas as pd
 import json
@@ -13,7 +17,7 @@ if __name__ == "__main__":
     df = pd.read_csv(DATA_FILE_PATH)
     print(df.head())
 
-    #Converting CSV data
+    #Converting CSV data to json record
     df.reset_index(drop=True,inplace=True)
     json_record = list(json.loads(df.T.to_json()).values())
     print(json_record[0])
